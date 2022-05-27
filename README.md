@@ -15,7 +15,8 @@ npx hardhat help
 ```
 
 # Contract deployment on goerli
-https://goerli.etherscan.io/address/0xDfF42208b39AAaD1814aaE101884CfE7fF85ff10
+Original - https://goerli.etherscan.io/address/0xDfF42208b39AAaD1814aaE101884CfE7fF85ff10
+Challenge - https://goerli.etherscan.io/address/0xB8dBD4b4bA5554D7a5AB130dC55A748319e70db8
 
 # Deployment instructions
 npx hardhat run scripts/deploy.js --network goerli
