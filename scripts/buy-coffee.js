@@ -46,14 +46,18 @@ async function main() {
   await printBalances(addresses);
 
   // Buy the owner a few coffees.
-  const tip = {value: hre.ethers.utils.parseEther("1")};
+  const tip = {value: hre.ethers.utils.parseEther("1000")};
   await buyMeACoffee.connect(tipper).buyCoffee("Carolina", "You're the best!", tip);
-  await buyMeACoffee.connect(tipper2).buyCoffee("Vitto", "Amazing teacher", tip);
-  await buyMeACoffee.connect(tipper3).buyCoffee("Kay", "I love my Proof of Knowledge", tip);
+  await buyMeACoffee.connect(tipper2).buyLargeCoffee("Vitto", "Amazing teacher", tip);
+  await buyMeACoffee.connect(tipper3).buyLargeCoffee("Kay", "I love my Proof of Knowledge", tip);
 
   // Check balances after the coffee purchase.
   console.log("== bought coffee ==");
   await printBalances(addresses);
+
+  // Switch addresses to tipper address TESTING NEW TRANSFER
+  // await buyMeACoffee.connect(owner).updateWithdrawAddress(tipper.address);
+  // await buyMeACoffee.connect(tipper).withdrawTips();
 
   // Withdraw.
   await buyMeACoffee.connect(owner).withdrawTips();
